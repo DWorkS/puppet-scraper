@@ -1,7 +1,7 @@
 import {
   Browser,
   ConnectOptions,
-  DirectNavigationOptions,
+  WaitForOptions,
   LaunchOptions,
 } from 'puppeteer';
 
@@ -10,7 +10,7 @@ import {
 export interface ScrapeFromUrlProps<T extends any> {
   url: string;
   evaluateFn: () => T;
-  pageOptions?: DirectNavigationOptions;
+  pageOptions?: WaitForOptions;
 }
 
 export type ScrapeFromUrl = <T>(
@@ -24,7 +24,7 @@ export type ScrapeFromUrl = <T>(
 export interface ScrapeFromUrlsProps<T extends any> {
   urls: string[];
   evaluateFn: () => T;
-  pageOptions?: DirectNavigationOptions;
+  pageOptions?: WaitForOptions;
 }
 
 export type ScrapeFromUrls = <T>(
